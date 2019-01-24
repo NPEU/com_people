@@ -29,8 +29,10 @@
         <filename>index.html</filename>
         <filename>people.php</filename>
         <filename>controller.php</filename>
+        <filename>router.php</filename>
         <folder>views</folder>
         <folder>language</folder>
+        <folder>models</folder>
     </files>
 
     <administration>
