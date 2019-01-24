@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 
 // Import the Joomla model library
-#jimport('joomla.application.component.model');
+jimport('joomla.application.component.model');
 
 /**
  * People Model

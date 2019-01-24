@@ -38,10 +38,10 @@ function PeopleParseRoute($segments)
     $person_id     = preg_replace('#.*-(\d+)$#', '$1', $vars['alias']);
 
     $db = JFactory::getDBO();
-    $query  = 'SELECT id FROM #__users usr';
+    $query  = 'SELECT usr.id FROM #__users usr';
     $query .= ' JOIN `#__user_usergroup_map` ugmap ON usr.id = ugmap.user_id';
     $query .= ' JOIN `#__usergroups` ugp ON ugmap.group_id = ugp.id ';
-    $query .= ' WHERE id = '. (int) $person_id . ' AND block = 0 AND ugp.title = "Staff"';
+    $query .= ' WHERE usr.id = '. (int) $person_id . ' AND usr.block = 0 AND ugp.title = "Staff"';
 
     $db->setQuery($query);
     $result = $db->loadObject();
