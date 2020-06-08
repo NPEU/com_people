@@ -28,12 +28,16 @@ class PeopleModelPeople extends JModelLegacy
             '608',
         );
 
-        foreach ($data as $group_name => $group) {
-            foreach ($group['people'] as $key => $person) {
-                if (in_array($person['id'], $exclude)) {
-                    unset($data[$group_name]['people'][$key]);
+        if (is_array($data)) {
+            foreach ($data as $group_name => $group) {
+                foreach ($group['people'] as $key => $person) {
+                    if (in_array($person['id'], $exclude)) {
+                        unset($data[$group_name]['people'][$key]);
+                    }
                 }
             }
+        } else {
+            $data = array();
         }
 
         return $data;
