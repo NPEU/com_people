@@ -17,10 +17,11 @@ jimport('joomla.application.component.model');
  */
 class PeopleModelPerson extends JModelLegacy
 {
-	public function getPerson()
-	{
-		$base_url = JUri::base();
-		$data     = json_decode(file_get_contents($base_url . 'data/staff?id=' . $this->person_id), true);
-		return $data[0];
-	}
+    public function getPerson()
+    {
+        $base_url = JUri::base();
+        $data     = json_decode(file_get_contents($base_url . 'data/staff?id=' . $this->person_id), true);
+        $return   = isset($data[0]) ? $data[0] : array();
+        return $return;
+    }
 }
