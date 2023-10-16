@@ -11,15 +11,15 @@ namespace NPEU\Component\People\Site\Model;
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Factory;
 #use Joomla\CMS\MVC\Model\ItemModel;
-use Joomla\CMS\Language\Text;
-use Joomla\Registry\Registry;
 #use NPEU\Component\People\Site\Helper\PersonHelper;
-use Joomla\CMS\Router\Route;
-use Joomla\CMS\Language\Multilanguage;
 use Joomla\CMS\Cache\CacheControllerFactoryInterface;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Multilanguage;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
+use Joomla\Registry\Registry;
 
 /**
  * Person Component Model

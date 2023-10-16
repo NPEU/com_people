@@ -12,19 +12,19 @@ namespace NPEU\Component\People\Site\Controller;
 defined('_JEXEC') or die;
 
 
+use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Factory;
-use Joomla\CMS\User\UserFactoryInterface;
-use Joomla\CMS\MVC\Controller\FormController;
-use Joomla\CMS\Language\Text;
-use Joomla\CMS\Uri\Uri;
-use Joomla\CMS\User\User;
-use Joomla\CMS\Session\Session;
-use Joomla\CMS\Log\Log;
 use Joomla\CMS\Filesystem\File;
 use Joomla\CMS\Filesystem\Path;
 use Joomla\CMS\Helper\MediaHelper;
-use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Log\Log;
+use Joomla\CMS\MVC\Controller\FormController;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Session\Session;
+use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\User\User;
+use Joomla\CMS\User\UserFactoryInterface;
 
 /**
  * Person Component Controller
