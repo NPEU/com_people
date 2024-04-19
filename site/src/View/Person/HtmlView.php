@@ -11,15 +11,15 @@ namespace NPEU\Component\People\Site\View\Person;
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
+use Joomla\CMS\Log\Log;
+use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Language\Text;
 #use Joomla\CMS\Helper\TagsHelper;
+use Joomla\CMS\Router\Route;
 #use Joomla\CMS\Plugin\PluginHelper;
 #use Joomla\Event\Event;
-use Joomla\CMS\Factory;
-use Joomla\CMS\Language\Text;
-use Joomla\CMS\Log\Log;
-use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
-use Joomla\CMS\Router\Route;
-use Joomla\CMS\Uri\Uri;
 
 /**
  * Person Component HTML View
@@ -82,6 +82,7 @@ class HtmlView extends BaseHtmlView {
         $menus  = $app->getMenu();
         $menu   = $menus->getActive();
 
+        $menu->title = trim($this->person['title'] . ' ' . $this->person['name']);
         //$this->title = $menu->title;
         //$this->title = $this->item->title;
 
