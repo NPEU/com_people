@@ -20,8 +20,8 @@ use Joomla\CMS\Component\Router\RouterViewConfiguration;
 use Joomla\CMS\Component\Router\Rules\MenuRules;
 use Joomla\CMS\Component\Router\Rules\NomenuRules;
 use Joomla\CMS\Component\Router\Rules\StandardRules;
+/**/use Joomla\CMS\MVC\Factory\MVCFactoryAwareTrait;
 use Joomla\CMS\Menu\AbstractMenu;
-use Joomla\CMS\MVC\Factory\MVCFactoryAwareTrait;
 use Joomla\CMS\Uri\Uri;
 use Joomla\Database\DatabaseInterface;
 use Joomla\Database\ParameterType;
@@ -131,7 +131,7 @@ class Router extends RouterView
      */
     public function getPersonSegment(int $id, array $query): array
     {
-        echo 'getPersonSegment<pre>'; var_dump($query); echo '</pre>';# exit;
+        #echo 'getPersonSegment<pre>'; var_dump($query); echo '</pre>';# exit;
 
         $db = $this->db;
 
