@@ -45,12 +45,9 @@
         <menu>COM_PEOPLE_MENU</menu>
 
         <files folder="admin">
-            <folder>forms</folder>
             <folder>language</folder>
             <folder>services</folder>
-            <folder>sql</folder>
             <folder>src</folder>
-            <folder>tmpl</folder>
         </files>
     </administration>
 
