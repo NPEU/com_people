@@ -82,39 +82,33 @@ class HtmlView extends BaseHtmlView {
         $menus  = $app->getMenu();
         $menu   = $menus->getActive();
 
-        $menu->title = trim($this->person['title'] . ' ' . $this->person['name']);
-        //$this->title = $menu->title;
-        //$this->title = $this->item->title;
 
+        $uri    = Uri::getInstance();
+        $menus  = $app->getMenu();
+        $menu   = $menus->getActive();
+        #echo '<pre>'; var_dump($menu); echo '</pre>'; exit;
         $this->menu_params = $menu->getParams();
-
-        // Add to breadcrumbs:
-        $breadcrumb_title = false;
-        //if ((!$breadcrumb_title = $this->item->title) && $is_new) {
-        if (!empty($this->person) && !empty($this->person['name'])) {
-            $breadcrumb_title = $this->person['name'];
-        }
-        #echo '<pre>'; var_dump($breadcrumb_title); echo '</pre>'; exit;
 
         $pathway = $app->getPathway();
 
         // Fix the pathway link:
-        // I don't think this should be necessary - I thought the Router should handle this, but the
-        // final URL is just 'index.php' (the link at this stage is:
-        // 'index.php?option=com_people&view=people&Itemid=xxx' )
-        // I'm fudging things here...
-        /*$pathway_items = $pathway->getPathway();
-        $c = count($pathway_items) - 1;
-        $link = $pathway_items[$c]->link;
-        $pathway_items[$c]->link = $menu->route;
-        #$pathway_items[$c]->link = preg_replace('/&Itemid=\d+$/', '', $link);
+        // I don't think this should be necessary - I thought the Router should handle this???
+
+        $pathway = $app->getPathway();
+
+        $pathway_items = $pathway->getPathway();
+        $last_item =  array_pop($pathway_items);
+        $last_item->name =  $this->person['name'];
+        $pathway_items[] = (object) ['name' => $menu->title, 'link' => $menu->link];
+        $pathway_items[] = $last_item;
 
         $pathway->setPathway($pathway_items);
-        */
-        /* --- */
 
-        $pathway->addItem($breadcrumb_title);
-        #echo '<pre>'; var_dump($pathway); echo '</pre>'; exit;
+        // Set the menu (page) title to be this item:
+        $menu->title = trim($this->person['title'] . ' ' . $this->person['name']);
+
+
+        $this->return_page = base64_encode($uri::base() . $menu->route);
 
         // Check for errors.
         $errors = $this->get('Errors', false);
