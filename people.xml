@@ -9,7 +9,7 @@
     <copyright>(C) NPEU 2023</copyright>
     <license>MIT License; see LICENSE.md</license>
 
-    <version>4.1.1</version>
+    <version>4.1.2</version>
     <description>COM_PEOPLE_DESCRIPTION</description>
 
     <namespace path="src">NPEU\Component\People</namespace>
@@ -17,22 +17,6 @@
     <updateservers>
         <server type="extension" name="NPEU: com_people Update Site">https://raw.githubusercontent.com/NPEU/com_people/main/update-manifest.xml</server>
     </updateservers>
-
-    <install>
-        <sql>
-            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
-        </sql>
-    </install>
-    <uninstall>
-        <sql>
-            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
-        </sql>
-    </uninstall>
-    <update>
-        <schemas>
-            <schemapath type="mysql">sql/updates/mysql</schemapath>
-        </schemas>
-    </update>
 
     <files folder="site">
         <folder>language</folder>
